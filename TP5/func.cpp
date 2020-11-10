@@ -115,9 +115,9 @@ Fonction* Trigo::clone() const {
 	return new Trigo(*this);
 }
 
-Derivee::Derivee(const Fonction* fonc) {
+Derivee::Derivee(const Fonction* func) {
 
-	integrale = fonc->clone();
+	integrale = func->clone();
 }
 
 Derivee::~Derivee() {
