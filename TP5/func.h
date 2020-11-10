@@ -24,7 +24,7 @@ private:
 public:
 	Polynome() {};
 	Polynome(vector<float>);
-	~Polynome();  // virtual
+	~Polynome();
 	float operator() (float x) const;
 	Fonction* derivee() const;
 	Fonction* clone() const;
@@ -37,7 +37,7 @@ private:
 
 public:
 	Affine(float, float);
-	~Affine();  // virtual
+	~Affine();
 	float operator() (float x) const;
 	Fonction* derivee() const;
 	Fonction* clone() const;
@@ -50,7 +50,7 @@ private:
 public:
 	Trigo(string);
 	Trigo(const Trigo&);
-	~Trigo();  // virtual
+	~Trigo();
 	float operator() (float x) const;
 	Fonction* derivee() const;
 	Fonction* clone() const;
@@ -61,7 +61,7 @@ class Derivee : public Fonction {
 private:
 	Fonction* integrale;
 public:
-	Derivee(Fonction*);
+	Derivee(const Fonction*);
 	~Derivee();
 	float operator() (float x) const;
 	Fonction* derivee() const;

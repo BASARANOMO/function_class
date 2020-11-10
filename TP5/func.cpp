@@ -8,7 +8,7 @@ float Fonction::inverse(float y) const {
 	float xPrev = 1.0;
 	float xCurr;
 	float delta = 1.0;
-	int i = 0;
+	int i = 1;
 	while ((delta > 1e-5) && (i < 100)) {
 		xCurr = xPrev + (y - (*this)(xPrev)) / (*(this)->derivee())(xPrev);
 		delta = abs(xCurr - xPrev);
@@ -42,6 +42,11 @@ float Polynome::operator() (float x) const {
 
 Fonction* Polynome::derivee() const {
 	vector<float> newCoeffs;
+	if (coeffs.size() <= 1) {
+		newCoeffs.push_back(0);
+		return new Polynome(newCoeffs);
+	}
+
 	vector<float>::const_iterator it = coeffs.begin();
 	++it;
 	int i = 1;
@@ -103,15 +108,16 @@ float Trigo::operator() (float x) const {
 }
 
 Fonction* Trigo::derivee() const {
-	return new Derivee(clone());
+	return new Derivee(this);
 }
 
 Fonction* Trigo::clone() const {
 	return new Trigo(*this);
 }
 
-Derivee::Derivee(Fonction* fonc) {
-	integrale = fonc;
+Derivee::Derivee(const Fonction* fonc) {
+
+	integrale = fonc->clone();
 }
 
 Derivee::~Derivee() {
@@ -125,9 +131,9 @@ float Derivee::operator() (float x) const {
 }
 
 Fonction* Derivee::derivee() const {
-	return new Derivee(clone());
+	return new Derivee(this);
 }
 
 Fonction* Derivee::clone() const {
-	return new Derivee(this->integrale->clone());
+	return new Derivee(this->integrale);
 }
