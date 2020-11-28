@@ -1,0 +1,8 @@
+﻿D:\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(459,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (TP5.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  func.cpp
+D:\ENPC\S5\PRALG\TP\TP5\function-class\func.cpp(129,22): warning C4305: 'initializing': truncation from 'double' to 'float'
+  main.cpp
+D:\ENPC\S5\PRALG\TP\TP5\function-class\main.cpp(19,70): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\ENPC\S5\PRALG\TP\TP5\function-class\main.cpp(23,71): warning C4305: 'argument': truncation from 'double' to 'float'
+  Generating Code...
+  function-class.vcxproj -> D:\ENPC\S5\PRALG\TP\TP5\Debug\function-class.exe

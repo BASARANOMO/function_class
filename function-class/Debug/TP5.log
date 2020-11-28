@@ -1,0 +1,4 @@
+﻿  main.cpp
+D:\ENPC\S5\PRALG\TP\TP5\TP5\main.cpp(19,70): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\ENPC\S5\PRALG\TP\TP5\TP5\main.cpp(23,71): warning C4305: 'argument': truncation from 'double' to 'float'
+  TP5.vcxproj -> D:\ENPC\S5\PRALG\TP\TP5\Debug\TP5.exe
